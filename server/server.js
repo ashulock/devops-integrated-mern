@@ -36,7 +36,7 @@ app.use('*', (req, res) => {
 
 // Database connection
 mongoose
-  .connect(process.env.MONGO_URI, {
+  .connect('mongodb+srv://ashutosh:ninja@cluster3.yxerw3i.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
