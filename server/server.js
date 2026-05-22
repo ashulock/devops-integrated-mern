@@ -4,8 +4,12 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const taskRoutes = require('./routes/tasks');
 
+
 // Load environment variables
 dotenv.config();
+
+const dns = require('dns');
+dns.setServers(['8.8.8.8']);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -36,7 +40,7 @@ app.use('*', (req, res) => {
 
 // Database connection
 mongoose
-  .connect('mongodb+srv://ashutosh:ninja@cluster3.yxerw3i.mongodb.net/', {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
