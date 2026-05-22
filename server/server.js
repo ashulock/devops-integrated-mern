@@ -4,7 +4,6 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const taskRoutes = require('./routes/tasks');
 
-
 // Load environment variables
 dotenv.config();
 
